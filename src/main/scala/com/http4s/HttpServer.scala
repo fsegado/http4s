@@ -24,7 +24,7 @@ object HttpServer extends StreamApp {
     logger.info(s"Starting server: $name:$port...")
 
     BlazeBuilder
-      .bindHttp(8081, "localhost")
+      .bindHttp(port, name)
       .mountService(ProductService.service)
       .serve
   }
