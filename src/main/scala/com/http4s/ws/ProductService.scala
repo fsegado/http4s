@@ -31,7 +31,7 @@ object ProductService {
 
       productRequest.flatMap(product => {
         val insertedProduct = productDao.addProduct(product)
-        Ok(insertedProduct.asJson)
+        Created(insertedProduct.asJson)
       })
     }
   }
